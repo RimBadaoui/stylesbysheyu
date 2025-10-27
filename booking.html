@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- loads Google's JavaScript client library which
+   gives my webpage the ability to talk to Google APIs-->
+  <script src="https://apis.google.com/js/api.js"></script>
+
+  <!-- Flatpickr (Calendar) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Braiding Appointment Booking</title>
 
-  <!-- Flatpickr CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      /* Lavender → White → Cream gradient */
       background: linear-gradient(to bottom right, #e6e6fa, #ffffff, #fff5e6);
       color: #3a2e2e;
       padding: 40px;
@@ -28,7 +32,7 @@
 
     h2 {
       text-align: center;
-      color: #8a6bb0; /* deep lavender heading */
+      color: #8a6bb0;
       font-size: 1.8rem;
       margin-bottom: 10px;
     }
@@ -55,7 +59,6 @@
       font-size: 15px;
     }
 
-    /* ---------- Checkbox Styling ---------- */
     #addons label {
       display: flex;
       align-items: center;
@@ -81,7 +84,7 @@
       margin-top: 20px;
       width: 100%;
       padding: 14px;
-      background: linear-gradient(135deg, #b39ddb, #e6e6fa); /* lavender gradient button */
+      background: linear-gradient(135deg, #b39ddb, #e6e6fa);
       border: none;
       border-radius: 10px;
       color: #3a2e2e;
@@ -99,11 +102,10 @@
 <body>
 
   <div class="booking-container">
-    <h2>Braids by [Your Name]</h2>
+    <h2>Styles By Sheyu</h2>
     <p class="subtitle">Select your style, add-ons, and book your perfect look.</p>
 
     <form id="bookingForm">
-      <!-- Braiding Style -->
       <label for="style">Choose a Style:</label>
       <select id="style" name="style">
         <option value="100">Box Braids - $100</option>
@@ -112,7 +114,6 @@
         <option value="150">Passion Twists - $150</option>
       </select>
 
-      <!-- Add-Ons Checkboxes -->
       <label>Add-Ons:</label>
       <div id="addons">
         <label><input type="checkbox" name="addons" value="15"> Beads (+$15)</label>
@@ -121,60 +122,80 @@
         <label><input type="checkbox" name="addons" value="30"> Coloring (+$30)</label>
       </div>
 
-      <!-- Calendar -->
       <label for="calendar">Select Appointment Date:</label>
       <input type="text" id="calendar" name="date" placeholder="Choose your date">
 
-      <!-- Time -->
       <label for="time">Select Time:</label>
       <input type="time" id="time" name="time">
 
-      <!-- Total -->
       <div class="total" id="total">Total: $0</div>
-
-      <!-- Submit Button -->
       <button type="submit">Book Appointment</button>
     </form>
   </div>
 
-  <!-- ---------- SCRIPTS ---------- -->
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
+    // total calculator
     const styleSelect = document.getElementById('style');
     const totalDisplay = document.getElementById('total');
     const calendarInput = document.getElementById('calendar');
     const timeInput = document.getElementById('time');
     const bookingForm = document.getElementById("bookingForm");
 
-    // ---------- CALCULATE TOTAL ----------
     function calculateTotal() {
-      let total = parseInt(styleSelect.value); // Base price
+      let total = parseInt(styleSelect.value);
       const addonCheckboxes = document.querySelectorAll("#addons input[type=checkbox]");
-      addonCheckboxes.forEach(checkbox => {
-        if (checkbox.checked) total += parseInt(checkbox.value);
-      });
+      addonCheckboxes.forEach(cb => { if (cb.checked) total += parseInt(cb.value); });
       totalDisplay.textContent = `Total: $${total}`;
       return total;
     }
 
     styleSelect.addEventListener('change', calculateTotal);
-    const addonCheckboxes = document.querySelectorAll("#addons input[type=checkbox]");
-    addonCheckboxes.forEach(cb => cb.addEventListener("change", calculateTotal));
+    document.querySelectorAll("#addons input[type=checkbox]").forEach(cb => cb.addEventListener("change", calculateTotal));
 
-    // ---------- CALENDAR SETUP ----------
+    // calendar setup
     flatpickr("#calendar", {
       dateFormat: "Y-m-d",
       minDate: "today",
-      disable: [date => date.getDay() === 0], // Disable Sundays
-      onDayCreate: function(dObj, dStr, fp, dayElem) {
-        dayElem.addEventListener('mouseenter', () => dayElem.style.backgroundColor = '#f4e1c1');
-        dayElem.addEventListener('mouseleave', () => dayElem.style.backgroundColor = '');
-      }
+      disable: [date => date.getDay() === 0], // disable Sundays
     });
 
-    // ---------- FORM SUBMISSION ----------
+    // --- GOOGLE CALENDAR INTEGRATION ---
+    // identifies my app to Google for OAuth authentication
+    const CLIENT_ID = "997065127045-2a2c8j3f532fbo52mq7j7pnmvvgtbld6.apps.googleusercontent.com";
+    const API_KEY = "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";
+    // tells gapi how to call the Calendar API endpoints
+    const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+    // permissions my app is requesting - full access to add events in calendar
+    const SCOPES = "https://www.googleapis.com/auth/calendar.events";
+
+
+    function initClient() {
+      // initializes client with credentials
+      gapi.client.init({
+        apiKey: API_KEY,
+        clientId: CLIENT_ID,
+        discoveryDocs: DISCOVERY_DOCS,
+        scope: SCOPES
+      }).then(() => console.log("✅ Google API initialized"));
+    }
+
+    // Load Google API after window loads
+    window.onload = function() {
+      gapi.load('client:auth2', initClient);
+    };
+
+    function authenticate() {
+      // gets the OAuth instance for my client
+      return gapi.auth2.getAuthInstance()
+      // opens a google popup asking the user to log in
+        .signIn()
+        .then(() => console.log("✅ User signed in"))
+        .catch(err => console.error("❌ Error signing in", err));
+    }
+
+    // form submit
     bookingForm.addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent page reload
+      event.preventDefault();
 
       const date = calendarInput.value;
       const time = timeInput.value;
@@ -185,13 +206,28 @@
         return;
       }
 
-      alert(`✅ Booking Confirmed!
-Date: ${date}
-Time: ${time}
-Total: $${total}
+      authenticate().then(() => {
+        const event = {
+          summary: `Braiding Appointment - $${total}`,
+          description: "Braids by [Your Name]",
+          start: { dateTime: `${date}T${time}:00`, timeZone: "America/New_York" },
+          end: { dateTime: `${date}T${time}:00`, timeZone: "America/New_York" }
+        };
 
-(This will be added to Google Calendar in the next step!)`);
+        // calls the calendar api to create the event on the
+        // user's primary calendar
+        gapi.client.calendar.events.insert({
+          calendarId: "primary",
+          resource: event
+        }).then(() => {
+          alert(`✅ Appointment booked and added to your Google Calendar!`);
+        }).catch(err => {
+          console.error("❌ Error creating event:", err);
+          alert("Something went wrong. Check the console for details.");
+        });
+      });
     });
   </script>
 </body>
 </html>
+
