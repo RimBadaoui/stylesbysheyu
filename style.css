@@ -1,0 +1,27 @@
+body{
+    background: linear-gradient(to bottom, purple, white);
+    height: 100%;
+    margin: 0;
+}
+.logo-title{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.navbar {
+    display:flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    background-color: purple;
+    margin-bottom: 0;
+}
+.navbar a{
+    text-decoration: none;
+    margin: 10px 50px;
+    color: white;
+    padding: 0px;
+    font-size: 20px;
+}
+.navbar a:hover{
+}
