@@ -133,7 +133,7 @@
     </style>
 </head>
 <body>
-    <img src="images/stylesbysheyu.png" class="logo-title" alt="stylesbysheyu">
+    <!-- <img src="images/stylesbysheyu.png" class="logo-title" alt="stylesbysheyu">
     <div class="hidden-h1"><h1>stylesbysheyu hair braiding braids</h1><br></div>
     <div class="navbar">
         <a href="index.html">Home</a>
@@ -142,8 +142,10 @@
         <a href="visualizer.html">Color Visualizer</a>
         <a href="haircare.html">Hair Care</a>
         <a href="policies.html">Policies</a>
-    </div>
-    
+    </div> -->
+
+    <div id="header-placeholder"></div>
+
     <div>
         <h2>Client Results</h2>
     </div>
@@ -200,6 +202,15 @@
       </article>
     </div>
   </div>
+
+  <script>
+    // Load and inject the header.html content
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+  </script>
 
 </body>
 </html>
