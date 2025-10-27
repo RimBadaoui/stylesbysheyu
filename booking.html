@@ -100,6 +100,7 @@
   </style>
 </head>
 <body>
+  <div id="header-placeholder"></div>
 
   <div class="booking-container">
     <h2>Styles By Sheyu</h2>
@@ -134,6 +135,15 @@
   </div>
 
   <script>
+    //header
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    });
+
     // total calculator
     const styleSelect = document.getElementById('style');
     const totalDisplay = document.getElementById('total');
