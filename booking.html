@@ -2,215 +2,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Styles by Sheyu – Booking</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Styles by Sheyu – Booking</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://apis.google.com/js/api.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
 
-<style>
-  /* --- YOUR ORIGINAL CSS --- */
-  /* body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #3a2e2e;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to bottom right, #d9c2ff, #fff0f5, #e8e6ff);
-    background-image: url('https://images.unsplash.com/photo-1508779018996-19738a15e8aa?auto=format&fit=crop&w=1400&q=80');
-    background-blend-mode: overlay;
-    background-size: cover;
-    background-position: center;
-  } */
-  .booking-container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 35px rgba(150, 130, 255, 0.3);
-    max-width: 500px;
-    width: 90%;
-    backdrop-filter: blur(5px);
-    animation: fadeIn 1s ease-in-out;
-  }
-  h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
-    color: #9b6cfb;
-    text-shadow: 0 0 8px rgba(171, 140, 255, 0.8);
-    margin-bottom: 5px;
-  }
-  p.subtitle {
-    font-size: 1.1rem;
-    color: #6f5b89;
-    margin-bottom: 25px;
-  }
-  label {
-    display: block;
-    margin-top: 15px;
-    font-weight: 600;
-    color: #4a3b63;
-  }
-  select, input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-  }
-  #addons label {
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-    font-weight: 500;
-  }
-  #addons input[type=checkbox] {
-    margin-right: 10px;
-    width: 18px;
-    height: 18px;
-  }
-  .total {
-    font-weight: bold;
-    margin-top: 20px;
-    font-size: 1.2rem;
-    text-align: right;
-    color: #6d56a5;
-  }
-  button {
-    margin-top: 25px;
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(135deg, #b39ddb, #d8cfff);
-    border: none;
-    border-radius: 10px;
-    color: #3a2e2e;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  button:hover {
-    box-shadow: 0 0 15px #b39ddb;
-  }
-  button:active {
-    box-shadow: 0 0 25px #9b6cfb;
-    transform: scale(1.02);
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #3a2e2e;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom right, #d9c2ff, #fff0f5, #e8e6ff);
+      background-image: url('https://images.unsplash.com/photo-1508779018996-19738a15e8aa?auto=format&fit=crop&w=1400&q=80');
+      background-blend-mode: overlay;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .booking-container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(150, 130, 255, 0.3);
+      max-width: 500px;
+      width: 90%;
+      backdrop-filter: blur(5px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #9b6cfb;
+      text-shadow: 0 0 8px rgba(171, 140, 255, 0.8);
+      margin-bottom: 5px;
+    }
+
+    p.subtitle {
+      font-size: 1.1rem;
+      color: #6f5b89;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #4a3b63;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    #addons label {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    #addons input[type=checkbox] {
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+    }
+
+    .total {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      text-align: right;
+      color: #6d56a5;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #b39ddb, #d8cfff);
+      border: none;
+      border-radius: 10px;
+      color: #3a2e2e;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      box-shadow: 0 0 15px #b39ddb;
+    }
+
+    button:active {
+      box-shadow: 0 0 25px #9b6cfb;
+      transform: scale(1.02);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-<div id="header-placeholder"></div>
-<div class="booking-container">
-  <h1>Styles by Sheyu</h1>
-  <p class="subtitle">Select your style, add-ons, and book your perfect look ✨</p>
+  <div class="booking-container">
+    <h1>Styles by Sheyu</h1>
+    <p class="subtitle">Select your style, add-ons, and book your perfect look ✨</p>
 
-  <form id="bookingForm">
-    <label for="style">Choose a Style:</label>
-    <select id="style" name="style">
-      <option value="100">Box Braids – $100</option>
-      <option value="120">Knotless Braids – $120</option>
-      <option value="80">Cornrows – $80</option>
-      <option value="150">Passion Twists – $150</option>
-    </select>
+    <form id="bookingForm">
+      <label for="style">Choose a Style:</label>
+      <select id="style" name="style">
+        <option value="100">Box Braids – $100</option>
+        <option value="120">Knotless Braids – $120</option>
+        <option value="80">Cornrows – $80</option>
+        <option value="150">Passion Twists – $150</option>
+      </select>
 
-    <label>Add-Ons:</label>
-    <div id="addons">
-      <label><input type="checkbox" value="15"> Beads (+$15)</label>
-      <label><input type="checkbox" value="20"> Blowdry (+$20)</label>
-      <label><input type="checkbox" value="10"> Hair Wash (+$10)</label>
-      <label><input type="checkbox" value="30"> Coloring (+$30)</label>
-    </div>
+      <label>Add-Ons:</label>
+      <div id="addons">
+        <label><input type="checkbox" value="15"> Beads (+$15)</label>
+        <label><input type="checkbox" value="20"> Blowdry (+$20)</label>
+        <label><input type="checkbox" value="10"> Hair Wash (+$10)</label>
+        <label><input type="checkbox" value="30"> Coloring (+$30)</label>
+      </div>
 
-    <label for="calendar">Select Appointment Date:</label>
-    <input type="text" id="calendar" placeholder="Choose your date" />
-    <label for="time">Select Time:</label>
-    <input type="time" id="time" />
+      <label for="calendar">Select Appointment Date:</label>
+      <input type="text" id="calendar" placeholder="Choose your date" />
+      <label for="time">Select Time:</label>
+      <input type="time" id="time" />
 
-    <div class="total" id="total">Total: $0</div>
-    <button type="submit">Book Appointment</button>
-  </form>
-</div>
+      <div class="total" id="total">Total: $0</div>
+      <button type="submit">Book Appointment</button>
+    </form>
+  </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-        document.getElementById("header-placeholder").innerHTML = data;
+  <script>
+    const styleSelect = document.getElementById('style');
+    const totalDisplay = document.getElementById('total');
+    const bookingForm = document.getElementById("bookingForm");
+    function calculateTotal() {
+      let total = parseInt(styleSelect.value);
+      document.querySelectorAll("#addons input:checked").forEach(cb => total += parseInt(cb.value));
+      totalDisplay.textContent = `Total: $${total}`;
+      return total;
+    }
+    styleSelect.addEventListener('change', calculateTotal);
+    document.querySelectorAll("#addons input").forEach(cb => cb.addEventListener("change", calculateTotal));
+    flatpickr("#calendar", { dateFormat: "Y-m-d", minDate: "today", disable: [d => d.getDay()===0] });
+
+       // --- GOOGLE CALENDAR INTEGRATION ---
+    // identifies my app to Google for OAuth authentication
+    const CLIENT_ID = "997065127045-2a2c8j3f532fbo52mq7j7pnmvvgtbld6.apps.googleusercontent.com";
+    const API_KEY = "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";
+    // tells gapi how to call the Calendar API endpoints
+    const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+    // permissions my app is requesting - full access to add events in calendar
+    const SCOPES = "https://www.googleapis.com/auth/calendar.events";
+
+
+    function initClient() { gapi.client.init({apiKey: API_KEY, clientId: CLIENT_ID, discoveryDocs: DISCOVERY_DOCS, scope: SCOPES}); }
+    window.onload = () => gapi.load('client:auth2', initClient);
+    function authenticate() { return gapi.auth2.getAuthInstance().signIn(); }
+
+    bookingForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const date = document.getElementById("calendar").value;
+      const time = document.getElementById("time").value;
+      const total = calculateTotal();
+      if (!date || !time) return alert("Please select a date and time.");
+      authenticate().then(() => {
+        const event = { summary: `Braiding Appointment – $${total}`, start: { dateTime: `${date}T${time}\:00`, timeZone: "America/New_York" }, end: { dateTime: `${date}T14:00`, timeZone: "America/New_York" } };
+        gapi.client.calendar.events.insert({ calendarId: "primary", resource: event }).then(() => alert("✅ Appointment booked!"));
+      });
     });
-});
-
-const styleSelect = document.getElementById('style');
-const totalDisplay = document.getElementById('total');
-const bookingForm = document.getElementById("bookingForm");
-
-function calculateTotal() {
-  let total = parseInt(styleSelect.value);
-  document.querySelectorAll("#addons input:checked").forEach(cb => total += parseInt(cb.value));
-  totalDisplay.textContent = `Total: $${total}`;
-  return total;
-}
-
-styleSelect.addEventListener('change', calculateTotal);
-document.querySelectorAll("#addons input").forEach(cb => cb.addEventListener("change", calculateTotal));
-flatpickr("#calendar", { dateFormat: "Y-m-d", minDate: "today", disable: [d => d.getDay()===0] });
-
-// --- GOOGLE CALENDAR INTEGRATION ---
-const CLIENT_ID = "997065127045-2a2c8j3f532fbo52mq7j7pnmvvgtbld6.apps.googleusercontent.com";
-const API_KEY = "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";
-const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-const SCOPES = "https://www.googleapis.com/auth/calendar.events";
-
-function initClient() {
-  gapi.client.init({
-    apiKey: API_KEY,
-    clientId: CLIENT_ID,
-    discoveryDocs: DISCOVERY_DOCS,
-    scope: SCOPES
-  }).then(() => {
-    attachFormHandler();
-  }).catch(err => console.error("Error initializing API client:", err));
-}
-
-function attachFormHandler() {
-  bookingForm.addEventListener("submit", e => {
-    e.preventDefault(); // Prevent page reload
-
-    const date = document.getElementById("calendar").value;
-    const time = document.getElementById("time").value;
-    const total = calculateTotal();
-    if (!date || !time) return alert("Please select a date and time.");
-
-    gapi.auth2.getAuthInstance().signIn().then(() => {
-      const startDateTime = new Date(`${date}T${time}:00`);
-      const endDateTime = new Date(startDateTime.getTime() + 60*60*1000); // +1 hour
-
-      const event = {
-        summary: `Braiding Appointment – $${total}`,
-        start: { dateTime: startDateTime.toISOString(), timeZone: "America/New_York" },
-        end: { dateTime: endDateTime.toISOString(), timeZone: "America/New_York" }
-      };
-
-      gapi.client.calendar.events.insert({ calendarId: "primary", resource: event })
-        .then(() => alert("✅ Appointment booked!"))
-        .catch(err => console.error("Error creating event:", err));
-    }).catch(err => console.error("Error signing in:", err));
-  });
-}
-
-window.onload = () => gapi.load('client:auth2', initClient);
-</script>
+  </script>
 </body>
 </html>
+
