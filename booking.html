@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Braiding Appointment Booking</title>
+
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      /* Lavender → White → Cream gradient */
+      background: linear-gradient(to bottom right, #e6e6fa, #ffffff, #fff5e6);
+      color: #3a2e2e;
+      padding: 40px;
+    }
+
+    .booking-container {
+      max-width: 520px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #8a6bb0; /* deep lavender heading */
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #7b6f67;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    /* ---------- Checkbox Styling ---------- */
+    #addons label {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    #addons input[type=checkbox] {
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+    }
+
+    .total {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      text-align: right;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #b39ddb, #e6e6fa); /* lavender gradient button */
+      border: none;
+      border-radius: 10px;
+      color: #3a2e2e;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #a084c9, #d8cfff);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="booking-container">
+    <h2>Braids by [Your Name]</h2>
+    <p class="subtitle">Select your style, add-ons, and book your perfect look.</p>
+
+    <form id="bookingForm">
+      <!-- Braiding Style -->
+      <label for="style">Choose a Style:</label>
+      <select id="style" name="style">
+        <option value="100">Box Braids - $100</option>
+        <option value="120">Knotless Braids - $120</option>
+        <option value="80">Cornrows - $80</option>
+        <option value="150">Passion Twists - $150</option>
+      </select>
+
+      <!-- Add-Ons Checkboxes -->
+      <label>Add-Ons:</label>
+      <div id="addons">
+        <label><input type="checkbox" name="addons" value="15"> Beads (+$15)</label>
+        <label><input type="checkbox" name="addons" value="20"> Blowdry (+$20)</label>
+        <label><input type="checkbox" name="addons" value="10"> Hair Wash (+$10)</label>
+        <label><input type="checkbox" name="addons" value="30"> Coloring (+$30)</label>
+      </div>
+
+      <!-- Calendar -->
+      <label for="calendar">Select Appointment Date:</label>
+      <input type="text" id="calendar" name="date" placeholder="Choose your date">
+
+      <!-- Time -->
+      <label for="time">Select Time:</label>
+      <input type="time" id="time" name="time">
+
+      <!-- Total -->
+      <div class="total" id="total">Total: $0</div>
+
+      <!-- Submit Button -->
+      <button type="submit">Book Appointment</button>
+    </form>
+  </div>
+
+  <!-- ---------- SCRIPTS ---------- -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    const styleSelect = document.getElementById('style');
+    const totalDisplay = document.getElementById('total');
+    const calendarInput = document.getElementById('calendar');
+    const timeInput = document.getElementById('time');
+    const bookingForm = document.getElementById("bookingForm");
+
+    // ---------- CALCULATE TOTAL ----------
+    function calculateTotal() {
+      let total = parseInt(styleSelect.value); // Base price
+      const addonCheckboxes = document.querySelectorAll("#addons input[type=checkbox]");
+      addonCheckboxes.forEach(checkbox => {
+        if (checkbox.checked) total += parseInt(checkbox.value);
+      });
+      totalDisplay.textContent = `Total: $${total}`;
+      return total;
+    }
+
+    styleSelect.addEventListener('change', calculateTotal);
+    const addonCheckboxes = document.querySelectorAll("#addons input[type=checkbox]");
+    addonCheckboxes.forEach(cb => cb.addEventListener("change", calculateTotal));
+
+    // ---------- CALENDAR SETUP ----------
+    flatpickr("#calendar", {
+      dateFormat: "Y-m-d",
+      minDate: "today",
+      disable: [date => date.getDay() === 0], // Disable Sundays
+      onDayCreate: function(dObj, dStr, fp, dayElem) {
+        dayElem.addEventListener('mouseenter', () => dayElem.style.backgroundColor = '#f4e1c1');
+        dayElem.addEventListener('mouseleave', () => dayElem.style.backgroundColor = '');
+      }
+    });
+
+    // ---------- FORM SUBMISSION ----------
+    bookingForm.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent page reload
+
+      const date = calendarInput.value;
+      const time = timeInput.value;
+      const total = calculateTotal();
+
+      if (!date || !time) {
+        alert("Please select a date and time for your appointment.");
+        return;
+      }
+
+      alert(`✅ Booking Confirmed!
+Date: ${date}
+Time: ${time}
+Total: $${total}
+
+(This will be added to Google Calendar in the next step!)`);
+    });
+  </script>
+</body>
+</html>

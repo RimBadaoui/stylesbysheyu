@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(to bottom, purple, white);
+            height: 100%;
+            margin: 0;
+        }
+        .logo-title{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .navbar {
+            display:flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            background-color: purple;
+            margin-bottom: 0;
+        }
+        .navbar a{
+            text-decoration: none;
+            margin: 10px 50px;
+            color: white;
+            padding: 0px;
+            font-size: 20px;
+        }
+        .navbar a:hover{
+        }
+        .polaroids{
+            display: block;
+            margin: 0 auto;
+            width: 1000px;
+            height: auto;
+            padding:0%;
+        }
+        h2{
+            font-size: 50px;
+            text-align: center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .wrap {
+            max-width: 100%;
+            margin: 40px auto;
+            padding: 0 16px;
+        }
+
+        .hidden-h1{
+            color: transparent;
+            font-size: 1px;
+            margin: 0 0;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: 50px;
+            font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+            margin-top: 20px;
+        }
+
+        .track {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding: 16px 10px 24px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .track {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding: 16px 10px 24px;
+            scroll-snap-type: x mandatory;
+            background: transparent;   
+            border: none;              
+        }
+
+        .track::-webkit-scrollbar { height: 8px; }
+        .track::-webkit-scrollbar-thumb { background: #d7d7d7; border-radius: 999px; }
+        .track { scrollbar-width: thin; scrollbar-color: #d7d7d7 transparent; }
+
+        .card {
+            scroll-snap-align: center;
+            flex: 0 0 85%;       /* almost full width on mobile */
+            max-width: 420px;    /* avoid super wide cards on desktop */
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 16px;
+            background: #fff;
+            box-shadow: 0 5px 5px rgba(0,0,0,.05);
+        }
+
+        .stars {
+            color: #e1a300;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .quote {
+            margin: 10px 0 14px;
+            line-height: 1.5;
+        }
+
+        .person {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .avatar {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: #eee;
+            flex: none;
+        }
+
+        @media (min-width: 900px) {
+            .card { flex-basis: 360px; }
+        }
+    </style>
+</head>
+<body>
+    <img src="images/stylesbysheyu.png" class="logo-title" alt="stylesbysheyu">
+    <div class="hidden-h1"><h1>stylesbysheyu hair braiding braids</h1><br></div>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="booking.html">Book Now</a>
+        <a href="visualizer.html">Color Visualizer</a>
+        <a href="haircare.html">Hair Care</a>
+        <a href="policies.html">Policies</a>
+    </div>
+    
+    <div>
+        <h2>Client Results</h2>
+    </div>
+    
+    <img src="images/Green_Organic_Warm_Fitness_Bio-Link_Website__3_-removebg-preview.png" class="polaroids">
+
+    <div class="wrap">
+    <h2><i>What people say</i></h2>
+
+    <div class="track">
+      <article class="card">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p class="quote">"Clean parts and the braids lasted for weeks. Highly recommend."</p>
+        <div class="person">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><strong>Amina R.</strong> — Boston, MA</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="stars" >★★★★★</div>
+        <p class="quote">"Fast, friendly, and the beads were exactly what I wanted."</p>
+        <div class="person">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><strong>Jordan P.</strong> — Cambridge, MA</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Best protective style I've had—neat finish and comfy."</p>
+        <div class="person">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><strong>Laila S.</strong> — Somerville, MA</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p class="quote">"My fav hair braider ever!! Sheyu and her team are so professional and kind and they really value customer service about all else."</p>
+        <div class="person">
+          <div class="avatar"></div>
+          <div><strong>Rachel L.</strong> — Allston, MA</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p class="quote">"Best braider in town."</p>
+        <div class="person">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><strong>Rim B.</strong> — Medford, MA</div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+</body>
+</html>
