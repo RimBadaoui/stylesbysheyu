@@ -9,6 +9,13 @@ body{
     margin-right: auto;
     width: 50%;
 }
+
+.hidden-h1{
+    color: transparent;
+    font-size: 1px;
+    margin: 0 0;
+}
+
 .navbar {
     display:flex;
     justify-content: center;
