@@ -14,7 +14,7 @@
   <script src="https://apis.google.com/js/api.js"></script>
 
   <style>
-    body {
+    /* body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       color: #3a2e2e;
@@ -27,7 +27,7 @@
       background-blend-mode: overlay;
       background-size: cover;
       background-position: center;
-    }
+    } */
 
     .booking-container {
       text-align: center;
@@ -156,10 +156,11 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-    fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-        document.getElementById("header-placeholder").innerHTML = data;
+        fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("header-placeholder").innerHTML = data;
+        });
     });
 
     const styleSelect = document.getElementById('style');
