@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policies - Styles by Sheyu</title>
+    <meta name="keywords" content="hair braiding policies, appointment policies, salon rules, hair preparation, late fees, braiding hair, Styles by Sheyu">
+    <meta name="description" content="Important policies and guidelines for appointments at Styles by Sheyu hair braiding salon">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Internal Policies-specific styles */
+        .policies-hero {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #8B6CA8 100%);
+            color: var(--warm-white);
+            text-align: center;
+            padding: 5rem 2rem;
+            margin: 0 auto;
+            border-radius: 0;
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .policies-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+
+        .policies-hero h1 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .policies-hero p {
+            font-family: 'Lato', 'Arial', sans-serif;
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .policies-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: var(--soft-cream);
+        }
+
+        .policy-section {
+            background: var(--warm-white);
+            margin-bottom: 3rem;
+            padding: 3rem;
+            border-radius: 0;
+            box-shadow: var(--elegant-shadow);
+            border-left: 4px solid var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .policy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(107, 78, 138, 0.2);
+        }
+
+        .policy-section h2 {
+            color: var(--primary-purple);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--light-grey);
+            padding-bottom: 1rem;
+        }
+
+        .policy-section h3 {
+            color: var(--charcoal);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            letter-spacing: 0.2px;
+        }
+
+        .policy-section h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .policy-section p {
+            color: var(--charcoal);
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .policy-section .highlight {
+            background: linear-gradient(135deg, var(--accent-gold), #E6C558);
+            color: var(--charcoal);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .important-note {
+            background: linear-gradient(135deg, #FFE5E5, #FFD1D1);
+            border-left: 4px solid #E74C3C;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0;
+            position: relative;
+        }
+
+        .important-note::before {
+            content: "⚠️";
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .important-note h4 {
+            color: #C0392B;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            margin-left: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .important-note p {
+            margin-left: 2rem;
+            color: #8B2C1C;
+            font-weight: 500;
+        }
+
+        .policy-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .policy-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+            font-family: 'Lato', sans-serif;
+            line-height: 1.7;
+        }
+
+        .policy-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .contact-section {
+            background: var(--primary-purple);
+            color: var(--warm-white);
+            padding: 3rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-radius: 0;
+        }
+
+        .contact-section h2 {
+            color: var(--warm-white);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .contact-section p {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .contact-section a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-section a:hover {
+            color: var(--warm-white);
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .policies-hero {
+                padding: 3rem 1.5rem;
+            }
+            
+            .policies-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .policies-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .policies-container {
+                padding: 2rem 1rem;
+            }
+
+            .policy-section {
+                padding: 2rem;
+            }
+
+            .policy-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-section {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .policy-section {
+                padding: 1.5rem;
+            }
+
+            .important-note {
+                padding: 1.5rem;
+            }
+
+            .important-note h4,
+            .important-note p {
+                margin-left: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="Styles by Sheyu - Where braids and beads meet beauty" style="height: 50px; width: auto;">
+            </a>
+        </div>
+        
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="color-picker.html">Color Picker</a></li>
+                <li><a href="policies.html" class="active">Policies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Policies Hero Section -->
+    <section class="policies-hero">
+        <h1>Salon Policies</h1>
+        <p>Important guidelines for a smooth and professional experience</p>
+    </section>
+
+    <!-- Policies Container -->
+    <div class="policies-container">
+        
+        <!-- Hair Preparation Policy -->
+        <section class="policy-section">
+            <h2>Hair Preparation Requirements</h2>
+            <h3>Come with Your Hair Washed and Blow Dried</h3>
+            <p>To ensure the best results and maintain our schedule, please arrive with <span class="highlight">clean, washed, and blow-dried hair</span>. This allows us to begin your service immediately and achieve optimal styling results.</p>
+            <p><strong>Exception:</strong> Unless you have been specifically told otherwise during your consultation or booking confirmation.</p>
+            
+            <ul class="policy-list">
+                <li>Use a clarifying shampoo to remove all product buildup</li>
+                <li>Thoroughly condition your hair for manageability</li>
+                <li>Blow dry your hair completely before arrival</li>
+                <li>Avoid applying heavy oils or styling products before your appointment</li>
+            </ul>
+        </section>
+
+        <!-- Punctuality Policy -->
+        <section class="policy-section">
+            <h2>Punctuality & Late Fees</h2>
+            <h3>Timeliness is Essential</h3>
+            <p>We value both your time and our commitment to all clients. To maintain our schedule and provide quality service to everyone:</p>
+            
+            <div class="important-note">
+                <h4>Late Fee Policy</h4>
+                <p>An extra charge will be applied if you are <strong>15+ minutes late with no contact</strong>. Please call or text if you're running behind schedule.</p>
+            </div>
+
+            <ul class="policy-list">
+                <li>Arrive 5-10 minutes early to allow for check-in</li>
+                <li>Contact us immediately if you're running late</li>
+                <li>Late fees help compensate for schedule disruptions</li>
+                <li>Excessive lateness may result in rescheduling</li>
+            </ul>
+        </section>
+
+        <!-- Hair Supply Policy -->
+        <section class="policy-section">
+            <h2>Braiding Hair & Supplies</h2>
+            <h3>Bring Your Own Hair</h3>
+            <p><span class="highlight">Braiding hair will not be provided</span> unless arranged for special circumstances during booking. This ensures you get exactly the color, texture, and quality you prefer.</p>
+            
+            <ul class="policy-list">
+                <li>Purchase high-quality braiding hair from trusted suppliers</li>
+                <li>Bring 20-30% more hair than estimated for your style</li>
+                <li>Pre-stretched hair is preferred for easier installation</li>
+                <li>Contact us for hair type and amount recommendations</li>
+            </ul>
+            
+            <p><strong>Special Circumstances:</strong> If you need assistance with hair selection or emergency supply, please discuss this during booking. Additional fees may apply.</p>
+        </section>
+
+        <!-- No Call No Show Policy -->
+        <section class="policy-section">
+            <h2>No Call, No Show Policy</h2>
+            <h3>Communication is Key</h3>
+            
+            <div class="important-note">
+                <h4>Strict Cancellation Policy</h4>
+                <p><strong>No contact after 30+ minutes will result in cancellation and potential ban for future appointments.</strong></p>
+            </div>
+
+            <p>We understand that emergencies happen, but consistent communication helps us serve all our clients better.</p>
+            
+            <ul class="policy-list">
+                <li>Call or text if you need to cancel or reschedule</li>
+                <li>Provide at least 24-hour notice when possible</li>
+                <li>Emergency situations are handled case-by-case</li>
+                <li>Repeated no-shows may result in booking restrictions</li>
+            </ul>
+        </section>
+
+        <!-- Payment & Additional Policies -->
+        <section class="policy-section">
+            <h2>Payment & General Policies</h2>
+            <h3>Service Investment</h3>
+            <p>Quality hair artistry is an investment in your beauty and hair health. We accept various payment methods for your convenience.</p>
+            
+            <ul class="policy-list">
+                <li>Cash, card, and digital payments accepted</li>
+                <li>Deposits may be required for extensive services</li>
+                <li>Pricing discussed and confirmed before service begins</li>
+                <li>Touch-up policies vary by service type</li>
+            </ul>
+
+            <h3>Professional Environment</h3>
+            <p>We maintain a professional, respectful salon environment for all clients and staff.</p>
+            
+            <ul class="policy-list">
+                <li>Respectful communication is expected</li>
+                <li>Children must be supervised at all times</li>
+                <li>Food and drinks should be discussed beforehand</li>
+                <li>Phone calls should be kept to a minimum during service</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>Questions About Our Policies?</h2>
+            <p>We're here to help! If you have any questions about our policies or need clarification before your appointment, please don't hesitate to reach out.</p>
+            <p>
+                📱 <strong>Instagram:</strong> <a href="https://www.instagram.com/stylesbysheyu/" target="_blank">@stylesbysheyu</a><br>
+                💌 <strong>Contact us</strong> through our <a href="contact.html">contact page</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Styles by Sheyu. All rights reserved. | Follow us on <a href="https://www.instagram.com/stylesbysheyu/" target="_blank" style="color: var(--accent-gold);">Instagram</a></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
