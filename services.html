@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Our Services</title>
+  <style>
+    body {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      background-color: #f7f7f7;
+      color: #222;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .services-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* two cards per row */
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background-color: white; 
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .service-card:hover {
+      background-color: rgba(139, 108, 168, 0.5); 
+    }
+
+    .service-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .service-description {
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .service-footer {
+      font-size: 0.9em;
+      color: #444;
+    }
+
+    @media (max-width: 700px) {
+      .services-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .book-now-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0;
+      padding: 10px 18px;
+      background-color: rgba(139, 108, 168, 0.5); 
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .book-now-btn:hover {
+      background-color: rgba(139, 108, 168, 0.715); 
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Our Services</h1>
+
+  <div class="services-container">
+
+    <div class="service-card">
+      <div class="service-title">Smedium - Jumbo Sizes</div>
+      <div class="service-description">
+        Includes braid sizes ranging from smedium to jumbo for customized looks and styles.
+      </div>
+      <div class="service-footer">Price varies • 2–4 hrs</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-title">Knotless, Slick, and Fulani Braids</div>
+      <div class="service-description">
+        Extensions available in knotless, slick, and Fulani styles for a sleek and protective finish.
+      </div>
+      <div class="service-footer">Starting at $100+ • 3–6 hrs</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-title">Natural Hairstyles</div>
+      <div class="service-description">
+        Styles include finger coils, twists, cornrows, and straight backs designed for natural textures.
+      </div>
+      <div class="service-footer">Price varies • 1.5–3 hrs</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-title">Add-Ons & Custom Designs</div>
+      <div class="service-description">
+        Enhance any style with boho pieces, goddess pieces, French curls, designs with cornrows or Fulani styles, hair jewelry, beads, or money pieces.
+      </div>
+      <div class="service-footer">Add-on • +$10–$50</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-title">Hair Treatments</div>
+      <div class="service-description">
+        Rejuvenating options including detangling, hair masks, hot oil, scalp massages, consultations, and define/volume cuts.
+      </div>
+      <div class="service-footer">Starting at $40+ • 1–2 hrs</div>
+    </div>
+
+  </div>
+
+  <a href="booking.html" class="book-now-btn">Book Now</a>
+
+</body>
+</html>
