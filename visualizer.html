@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="style.css">
+
     <style>
         /* Internal Color Picker specific styles */
         .color-picker-hero {
@@ -416,9 +417,10 @@
     </style>
 </head>
 <body>
+    <div id="header-placeholder"></div>
     <!-- Header -->
-    <header>
-        <!--clicking logo takes to home page-->
+    <!-- <header>
+        clicking logo takes to home page-->
         <div class="logo">
             <a href="index.html">
                 <img src="assets/logo.png" alt="Styles by Sheyu - Where braids and beads meet beauty" style="height: 50px; width: auto;">
@@ -512,10 +514,19 @@
 
     <!-- JavaScript -->
     <script src="js/color-picker.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+            });
+        });
+    </script>
 </body>
 </html>
-        /* Ensure all three columns in picker-layout have equal height and squared corners */
+        <!-- /* Ensure all three columns in picker-layout have equal height and squared corners */
         .picker-layout > div {
             display: flex;
             flex-direction: column;
-        }
+        } -->
