@@ -1,0 +1,126 @@
+{
+  "gallery": [
+    {
+      "id": 1,
+      "image": "assets/gallary/gallery1.jpg",
+      "title": "Marley Twists",
+      "description": "Medium to large rope-like twists using Marley-textured hair for a natural, voluminous look. This protective style offers a soft matte finish and is ideal for maintaining natural hair health.",
+      "category": "box-braids",
+      "tags": ["Protective", "Voluminous", "Natural Texture"],
+      "duration": "3-4 hours",
+      "price": "$120-160"
+    },
+    {
+      "id": 2,
+      "image": "assets/gallary/gallery2.jpg",
+      "title": "Goddess Box Braids",
+      "description": "Box braids with loose, curly ends for a soft and flowing finish. Combines structure with movement, offering a lightweight, versatile look suitable for long wear.",
+      "category": "box-braids",
+      "tags": ["Curly Ends", "Knotless Option", "Protective"],
+      "duration": "4-6 hours",
+      "price": "$150-200"
+    },
+    {
+      "id": 3,
+      "image": "assets/gallary/gallery3.jpg",
+      "title": "Knotless Box Braids (Square Parts)",
+      "description": "A modern variation of classic box braids featuring smooth, knot-free roots created with the feed-in method. Each section is precisely parted into clean squares for a sleek, geometric look. Lightweight and gentle on the scalp, this protective style offers natural movement and long-lasting wear.",
+      "category": "box-braids",
+      "tags": ["Knotless", "Square Parts", "Lightweight"],
+      "duration": "5-7 hours",
+      "price": "$180-250"
+    },
+    {
+      "id": 4,
+      "image": "assets/gallary/gallery4.jpg",
+      "title": "Box-Parted Starter Locs",
+      "description": "Hair is parted into neat square sections and twisted from root to tip to begin the loc formation process. This foundation style promotes even loc development and clean parting, ideal for starting a loc journey.",
+      "category": "box-braids",
+      "tags": ["Starter Locs", "Square Parts", "Loc Journey"],
+      "duration": "2-3 hours",
+      "price": "$80-120"
+    },
+    {
+      "id": 5,
+      "image": "assets/gallary/gallery5.jpg",
+      "title": "Knotless Box Braids",
+      "description": "Individual braids started with natural hair and extended using a feed-in technique to avoid knots. The clean square parting offers a lightweight, tension-free finish.",
+      "category": "box-braids",
+      "tags": ["Lightweight", "Square Parts", "Protective"],
+      "duration": "5-7 hours",
+      "price": "$180-250"
+    },
+    {
+      "id": 6,
+      "image": "assets/gallary/gallery6.jpg",
+      "title": "Beaded Cornrows",
+      "description": "Cornrows braided close to the scalp and adorned with wooden beads for a classic, expressive style. Ideal for cultural expression and gentle protection.",
+      "category": "cornrows",
+      "tags": ["Traditional", "Decorative", "Protective"],
+      "duration": "2-3 hours",
+      "price": "$90-130"
+    },
+    {
+      "id": 7,
+      "image": "assets/gallary/gallery7.jpg",
+      "title": "Medium Marley Twists",
+      "description": "Two-strand twists with Marley-textured extensions for a full-bodied, natural look. The twists are durable and flexible for daily wear while maintaining scalp comfort.",
+      "category": "twists",
+      "tags": ["Twists", "Textured", "Protective"],
+      "duration": "3-5 hours",
+      "price": "$130-170"
+    },
+    {
+      "id": 8,
+      "image": "assets/gallary/gallery8.jpg",
+      "title": "Cornrows into Puff",
+      "description": "Cornrows styled toward the crown, ending in a voluminous natural puff. This hybrid look blends defined braids with the beauty of free-textured hair.",
+      "category": "cornrows",
+      "tags": ["Updo", "Natural Hair", "Protective"],
+      "duration": "2-3 hours",
+      "price": "$85-125"
+    },
+    {
+      "id": 9,
+      "image": "assets/gallary/gallery9.jpg",
+      "title": "Marley Twists",
+      "description": "Chunky two-strand twists using Marley hair, providing a natural, springy texture. A durable and low-maintenance protective style that retains moisture and definition.",
+      "category": "twists",
+      "tags": ["Natural Texture", "Protective", "Full Volume"],
+      "duration": "3-4 hours",
+      "price": "$125-165"
+    },
+    {
+      "id": 10,
+      "image": "assets/gallary/gallery10.jpg",
+      "title": "Feed-In Ponytail Braids",
+      "description": "Cornrows braided upward into a high ponytail, finished with long curly extensions. Elegant and versatile, this protective style enhances length and volume.",
+      "category": "cornrows",
+      "tags": ["Ponytail", "Feed-In", "Glamorous"],
+      "duration": "4-5 hours",
+      "price": "$140-190"
+    }
+  ],
+  "categories": {
+    "box-braids": {
+      "name": "Box Braids & Locs",
+      "description": "Square-sectioned styles including traditional box braids, knotless variations, and starter locs"
+    },
+    "cornrows": {
+      "name": "Cornrows",
+      "description": "Hair braided close to the scalp in rows, patterns, or styled into updos"
+    },
+    "twists": {
+      "name": "Twists",
+      "description": "Two-strand twists using natural or textured hair extensions"
+    }
+  },
+  "metadata": {
+    "total_styles": 10,
+    "last_updated": "2024-10-19",
+    "photographer": "Styles by Sheyu Team",
+    "image_quality": "15% compression for web optimization",
+    "description_source": "Professional stylist descriptions",
+    "style_accuracy": "Verified braiding terminology"
+  }
+}
