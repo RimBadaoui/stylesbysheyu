@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Our Services</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: 'Playfair Display', 'Georgia', serif;
@@ -81,6 +82,7 @@
   </style>
 </head>
 <body>
+  <div id="header-placeholder"></div>
 
   <h1>Our Services</h1>
 
@@ -129,6 +131,14 @@
   </div>
 
   <a href="booking.html" class="book-now-btn">Book Now</a>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("header-placeholder").innerHTML = data;
+        });
+    });
+  </script>
 </body>
 </html>
