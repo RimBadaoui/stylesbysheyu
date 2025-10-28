@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(to bottom, rgb(162, 71, 162), white);
+    background: linear-gradient(to bottom, #b698d0, white);
     height: 100%;
     margin: 0;
 }
@@ -20,7 +20,7 @@ body{
     display:flex;
     justify-content: center;
     flex-wrap: nowrap;
-    background-color: purple;
+    background-color: #937ba8 ;
     margin-bottom: 0;
 }
 .navbar a{
@@ -31,6 +31,7 @@ body{
     font-size: 20px;
 }
 .navbar a:hover{
+
 }
 
 
