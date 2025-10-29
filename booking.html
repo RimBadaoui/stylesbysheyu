@@ -16,7 +16,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      /* font-family: 'Poppins', sans-serif; */
       /* color: #3a2e2e;
       height: 100vh; */
       /* display: flex;
@@ -159,14 +159,19 @@
       <button type="submit">Book Appointment</button>
     </form>
   </div>
+  
+  <div id="footer-placeholder" class="footer-class"></div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        fetch("header.html")
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-        });
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+    });
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
     });
 
     const styleSelect = document.getElementById('style');
@@ -210,8 +215,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
