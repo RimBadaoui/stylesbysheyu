@@ -477,19 +477,24 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <!-- <footer>
         <p>&copy; 2024 Styles by Sheyu. All rights reserved. | Follow us on <a href="https://www.instagram.com/stylesbysheyu/" target="_blank" style="color: var(--accent-gold);">Instagram</a></p>
-    </footer>
+    </footer> -->
+    <div id="footer-placeholder" class="footer-class"></div>
 
     <!-- JavaScript -->
     <script src="js/color-picker.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            fetch("header.html")
-            .then(res => res.text())
+        fetch("header.html")
+            .then(response => response.text())
             .then(data => {
                 document.getElementById("header-placeholder").innerHTML = data;
-            });
+        });
+
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
         });
     </script>
 </body>
