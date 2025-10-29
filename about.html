@@ -1,12 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      /* font-family: "Playfair Display", Georgia, serif;
+      background-color: #ffffff;  */
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 60px;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center;  
+      gap: 25px; 
+      padding-bottom: 60px;
+    }
+
+    .card {
+      width: 250px;
+      background-color: white; 
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      overflow: hidden;
+      transition: 0.3s; 
+    }
+
+    .card:hover {
+      background-color: rgba(139, 108, 168, 0.5); 
+      transform: scale(1.03); 
+    }
+
+    .card img {
+      width: 100%;        
+      height: 220px;     
+      object-fit: cover;  
+      border-radius: 10px 10px 0 0; 
+    }
+
+    .card-content {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .card-content h4 {
+      margin: 10px 0 8px 0; 
+      font-size: 1.2rem;
+      color: #111;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    
+  <div id="header-placeholder"></div>
+  
+  <h2>Meet Our Team</h2>
+
+  <!-- Give this div an ID so JS can target it -->
+  <div class="card-container" id="cardContainer"></div>
+
+  <div id="footer-placeholder" class="footer-class"></div>
+
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+    });
+
+    const team = [
+      {
+        name: "Rachel",
+        photo: "braider1.jpg",
+        description: "Known for knotless braids and creative color blends."
+      },
+      {
+        name: "Tina",
+        photo: "braider2.jpg",
+        description: "Specializes in boho styles with a natural finish."
+      },
+      {
+        name: "Dua",
+        photo: "braider3.jpg",
+        description: "Creative stylist focused on cornrow art and detailed custom designs."
+      },
+      {
+        name: "Lina",
+        photo: "braider4.jpg",
+        description: "Expert in natural protective styles and healthy hair treatments."
+      }
+    ];
+
+    const container = document.getElementById("cardContainer");
+
+    team.forEach(member => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+        <img src="${member.photo}" alt="Photo of ${member.name}" />
+        <div class="card-content">
+          <h4>${member.name}</h4>
+          <p>${member.description}</p>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  </script>
 </body>
 </html>
