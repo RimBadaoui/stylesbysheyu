@@ -6,8 +6,10 @@
     <title>Policies - Styles by Sheyu</title>
     <meta name="keywords" content="hair braiding policies, appointment policies, salon rules, hair preparation, late fees, braiding hair, Styles by Sheyu">
     <meta name="description" content="Important policies and guidelines for appointments at Styles by Sheyu hair braiding salon">
-    
+    <link rel="stylesheet" href="style.css">
+
     <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -304,6 +306,8 @@
         <p>Important guidelines for a smooth and professional experience</p>
     </section> -->
 
+    <div id="header-placeholder"></div>
+
     <!-- Policies Container -->
     <div class="policies-container">
         
@@ -413,11 +417,27 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <!-- <footer>
         <p>&copy; 2024 Styles by Sheyu. All rights reserved. | Follow us on <a href="https://www.instagram.com/stylesbysheyu/" target="_blank" style="color: var(--accent-gold);">Instagram</a></p>
-    </footer>
+    </footer> -->
+
+    <div id="footer-placeholder" class="footer-class"></div>
+
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+        });
+
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
 </body>
 </html>
