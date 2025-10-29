@@ -2,6 +2,7 @@ body{
     background: linear-gradient(to bottom, #b698d0, white);
     height: 100%;
     margin: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 .logo-title{
     display: block;
@@ -108,3 +109,4 @@ nav a.active::after {
         document.getElementById("header-placeholder").innerHTML = data;
     });
 }); */
+
