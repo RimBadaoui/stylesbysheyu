@@ -8,6 +8,7 @@
     <meta name="description" content="Browse our stunning gallery of hair braiding styles and protective hairstyles by Styles by Sheyu">
     
     <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +73,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 2rem;
-            background: var(--soft-cream);
+            /* background: var(--soft-cream); */
         }
 
         .gallery-filter {
@@ -360,7 +361,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <!-- <header>
         <div class="logo">
             <a href="index.html">
                 <img src="assets/logo.png" alt="Styles by Sheyu - Where braids and beads meet beauty" style="height: 50px; width: auto;">
@@ -385,14 +386,14 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </header> -->
 
     <!-- Gallery Hero Section -->
-    <section class="gallery-hero">
+    <!-- <section class="gallery-hero">
         <h1>Our Hair Gallery</h1>
         <p>Discover stunning protective styles and braiding artistry</p>
-    </section>
-
+    </section> -->
+    <div id="header-placeholder"></div>
     <!-- Gallery Container -->
     <div class="gallery-container">
         <!-- Filter Buttons -->
@@ -418,11 +419,25 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <!-- <footer>
         <p>&copy; 2025 Styles by Sheyu. All rights reserved. | Follow us on <a href="https://www.instagram.com/stylesbysheyu/" target="_blank" style="color: var(--accent-gold);">Instagram</a></p>
-    </footer>
+    </footer> -->
+    <div id="footer-placeholder" class="footer-class"></div>
 
     <!-- JavaScript -->
     <script src="js/gallery.js"></script>
+    <script>
+        fetch("header.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("header-placeholder").innerHTML = data;
+          });
+    
+        fetch("footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
 </body>
 </html>
